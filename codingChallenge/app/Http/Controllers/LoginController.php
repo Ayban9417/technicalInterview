@@ -22,7 +22,7 @@ class LoginController extends Controller
             'password' => $request->input('password'),
         ]);
 
-        if($response->succesful()) {
+        if($response->successful()) {
             return redirect()->route('home');  // Valid credentials, log in the user and redirect to home
         } else{
             // Invalid credentials, return back to login
