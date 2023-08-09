@@ -22,3 +22,9 @@ Route::get('/', function () {
 
 Route::get('/account/login', [LoginController::class, 'loginForm'])->name('login');
 Route::post('/account/login', [LoginController::class, 'login']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
+
+Route::get('/home', [HomeController::class, 'showTerritories'])->name('home');
