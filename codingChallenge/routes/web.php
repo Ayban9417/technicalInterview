@@ -19,3 +19,6 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return redirect('/account/login');
 });
+
+Route::get('/account/login', [LoginController::class, 'loginForm'])->name('login');
+Route::post('/account/login', [LoginController::class, 'login']);
